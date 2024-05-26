@@ -22,7 +22,7 @@ export default function Notes() {
 
   return (
     <main>
-      <h1>Notes</h1>
+      <h1 className="w-full mb-12 text-4xl font-semibold">🐧MiDo</h1>
       <NoteForm setNotes={setNotes}/>
       {notes.map((note) => (
           <Note key={note.$id} noteData={note} setNotes={setNotes} />

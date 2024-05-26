@@ -18,11 +18,11 @@ export default function Note({ setNotes, noteData }) {
   }
 
   return (
-    <main>
+    <main className="flex justify-between px-2 py-3 mb-4 rounded-lg bg-slate-200">
       <div onClick={handleUpdate}>
         {note.completed ? <strike>{note.body}</strike> : note.body}
       </div>
-      <div onClick={handleDelete}>
+      <div onClick={handleDelete} className="flex items-center justify-center bg-blue-200 rounded-full w-7 h-7">
         <DeleteIcon/>
       </div>
     </main>
