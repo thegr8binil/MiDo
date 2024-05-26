@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import db from "../appwrite/database";
+import NoteForm from "../components/noteForm";
+import { Query } from "appwrite";
 export default function Notes() {
   const [notes, setNotes] = useState([]);
 
@@ -12,7 +14,7 @@ export default function Notes() {
   }, []);
 
   const init = async () => {
-    const res = await db.tasks.list();
+    const res = await db.tasks.list([Query.orderDesc('$createdAt')]);
 
     setNotes(res.documents);
   };
@@ -20,6 +22,7 @@ export default function Notes() {
   return (
     <main>
       <h1>Notes</h1>
+      <NoteForm setNotes={setNotes}/>
       <ul>
         {notes.map((note) => (
           <li key={note.$id}>
