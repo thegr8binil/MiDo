@@ -18,8 +18,14 @@ export default function Note({ setNotes, noteData }) {
     setNotes((prevState) => prevState.filter((n) => n.$id !== note.$id));
   }
 
+  const selectedTheme = localStorage.getItem("theme") || "dark";
+
+  if (selectedTheme) {
+    document.querySelector("body").setAttribute("data-theme", selectedTheme);
+  }
+
   return (
-    <main className="flex  justify-between px-2 py-3 mb-4 transition-all rounded-lg shadow-md cursor-pointer text-textPrimary bg-secondary hover:ring-borderPrimary hover:ring-1 hover:shadow-lg hover:scale-105">
+    <main className="flex justify-between px-2 py-3 mb-4 transition-all rounded-lg shadow-md cursor-pointer text-textPrimary bg-secondary hover:ring-borderPrimary hover:ring-1 hover:shadow-lg hover:scale-105">
       <div onClick={handleUpdate} className="w-full">
         {note.completed ? <strike>{note.body}</strike> : note.body}
       </div>
