@@ -18,7 +18,7 @@ export default function Note({ setNotes, noteData }) {
   }
 
   return (
-    <main className="flex justify-between px-2 py-3 mb-4 rounded-lg shadow-md bg-slate-100">
+    <main className="flex justify-between px-2 py-3 mb-4 transition-all rounded-lg shadow-md bg-slate-100 hover:ring-blue-500 hover:ring-1">
       <div onClick={handleUpdate} className="w-full">
         {note.completed ? <strike>{note.body}</strike> : note.body}
       </div>
