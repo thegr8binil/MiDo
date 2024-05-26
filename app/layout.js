@@ -10,9 +10,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
+  const setTheme = () => {
+    
   return (
-    <html lang="en" className="flex items-center justify-center w-full h-screen">
-      <body className={inter.className}>{children}</body>
+    <html
+      lang="en"
+      className="flex items-center justify-center w-full h-screen"
+    >
+      <body className={`${inter.className} bg-primary transition-all duration-700`} data-theme="purple">
+        {children}
+      </body>
     </html>
   );
 }

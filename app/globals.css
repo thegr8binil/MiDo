@@ -2,3 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-background-color: #e4e4e4;
+  --secondary-background-color: #f0f0f0;
+  --primary-text-color: #000;
+  --secondary-text-color: #666;
+  --primary-border-color: #0059ff;
+  --button-solid-background-color: #000;
+  --button-solid-text-color: #fff;
+  --button-outlined-background-color: transparent;
+  --button-outlined-text-color: #000;
+}
+
+[data-theme="dark"] {
+  --primary-background-color: #1f2028;
+  --secondary-background-color: #2e3039;
+  --primary-text-color: rgba(255, 255, 255, 0.87);
+  --secondary-text-color: #4b4c53;
+  --primary-border-color: #4b4c53;
+  --button-solid-background-color: #fff;
+  --button-solid-text-color: #000;
+  --button-outlined-background-color: transparent;
+  --button-outlined-text-color: #fff;
+}
+
+[data-theme="purple"] {
+  --primary-background-color: rgba(24, 16, 40, 1);
+  --secondary-background-color: rgba(44, 36, 70, 1);
+  --primary-text-color: rgba(255, 255, 255, 0.87);
+  --secondary-text-color: #8549a7;
+  --primary-border-color: #8549a7;
+  --button-solid-background-color: #fff;
+  --button-solid-text-color: #000;
+  --button-outlined-background-color: transparent;
+  --button-outlined-text-color: #fff;
+}

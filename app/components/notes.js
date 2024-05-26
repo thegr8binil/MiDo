@@ -3,6 +3,7 @@ import { useState } from "react";
 import db from "../appwrite/database";
 import DeleteIcon from "../assets/DeleteIcon";
 
+
 export default function Note({ setNotes, noteData }) {
   const [note, setNote] = useState(noteData);
 
@@ -18,11 +19,11 @@ export default function Note({ setNotes, noteData }) {
   }
 
   return (
-    <main className="flex justify-between px-2 py-3 mb-4 transition-all rounded-lg shadow-md bg-slate-100 hover:ring-blue-500 hover:ring-1">
+    <main className="flex  justify-between px-2 py-3 mb-4 transition-all rounded-lg shadow-md cursor-pointer text-textPrimary bg-secondary hover:ring-borderPrimary hover:ring-1 hover:shadow-lg hover:scale-105">
       <div onClick={handleUpdate} className="w-full">
         {note.completed ? <strike>{note.body}</strike> : note.body}
       </div>
-      <div onClick={handleDelete} className="flex items-center justify-center bg-blue-200 rounded-full w-7 h-7">
+      <div onClick={handleDelete} className="flex items-center justify-center border rounded-full border-borderPrimary bg-primary w-7 h-7">
         <DeleteIcon/>
       </div>
     </main>

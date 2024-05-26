@@ -22,7 +22,7 @@ export default function NoteForm({setNotes}) {
                 type="text"
                 name="body"
                 placeholder="📌 What's on the agenda?"
-                className="w-full p-2 pr-20 transition duration-200 ease-in-out border border-gray-300 rounded-md shadow-sm mb-7 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:border-gray-400">
+                className="w-full p-2 pr-20 transition duration-200 ease-in-out border rounded-md shadow-sm bg-primary border-textSecondary mb-7 focus:outline-none focus:ring-2 focus:border-borderPrimary text-textPrimary">
                 </input>
         </form>
     );
