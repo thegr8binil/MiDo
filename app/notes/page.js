@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { database } from "../appwrite/config";
+import db from "../appwrite/database";
 export default function Notes() {
   const [notes, setNotes] = useState([]);
 
@@ -12,7 +12,7 @@ export default function Notes() {
   }, []);
 
   const init = async () => {
-    const res = await database.listDocuments(databaseId, collectionId);
+    const res = await db.tasks.list();
 
     setNotes(res.documents);
   };
