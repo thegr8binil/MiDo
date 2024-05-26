@@ -2,25 +2,21 @@
 import { useEffect, useState } from "react";
 import { database } from "../appwrite/config";
 export default function Notes() {
-
-  const databaseId = process.env.C_DATABASE_ID
-  const collectionId= process.env.C_COLLECTION_ID
-
   const [notes, setNotes] = useState([]);
+
+  const databaseId = process.env.NEXT_PUBLIC_C_DATABASE_ID;
+  const collectionId = process.env.NEXT_PUBLIC_C_COLLECTION_ID_TASKS;
 
   useEffect(() => {
     init();
   }, []);
 
   const init = async () => {
-    const res = await database.listDocuments(
-      databaseId,
-      collectionId
-    );
+    const res = await database.listDocuments(databaseId, collectionId);
 
     setNotes(res.documents);
   };
- 
+
   return (
     <main>
       <h1>Notes</h1>
@@ -35,4 +31,3 @@ export default function Notes() {
     </main>
   );
 }
-
