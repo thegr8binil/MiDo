@@ -25,7 +25,7 @@ export default function Notes() {
       <h1>Notes</h1>
       <NoteForm setNotes={setNotes}/>
       {notes.map((note) => (
-        <Note key={note.$id} noteData={note}/>
+          <Note key={note.$id} noteData={note} setNotes={setNotes} />
       ))}
     </main>
   );
