@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import db from "../appwrite/database";
 import NoteForm from "../components/noteForm";
 import { Query } from "appwrite";
+import Note from "../components/notes";
 export default function Notes() {
   const [notes, setNotes] = useState([]);
 
@@ -23,14 +24,9 @@ export default function Notes() {
     <main>
       <h1>Notes</h1>
       <NoteForm setNotes={setNotes}/>
-      <ul>
-        {notes.map((note) => (
-          <li key={note.$id}>
-            <h2>{note.title}</h2>
-            <p>{note.body}</p>
-          </li>
-        ))}
-      </ul>
+      {notes.map((note) => (
+        <Note key={note.$id} noteData={note}/>
+      ))}
     </main>
   );
 }
