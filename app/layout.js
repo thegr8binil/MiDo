@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className="flex items-center justify-center w-full"
+      className="flex items-center justify-center w-full scroll-smooth"
     >
       <body
         className={`${inter.className} bg-primary transition-all duration-700`}

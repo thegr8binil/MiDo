@@ -24,7 +24,7 @@ export default function Notes() {
 
   return (
     <main>
-      <div className="flex items-center justify-between mb-12">
+      <div className="flex items-center justify-between mt-20 mb-8">
         <h1 className="w-full text-4xl font-semibold text-textPrimary">
           🐧MiDo
         </h1>
